@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #050505;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-neon-blue: #00f2ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-emerald: #0aff99;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-slate-200 antialiased selection:bg-neon-blue/30;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass backdrop-blur-xl border border-glass-border rounded-3xl;
+  }
+
+  .neon-shadow-blue {
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+  }
+
+  .neon-shadow-emerald {
+    box-shadow: 0 0 20px rgba(10, 255, 153, 0.2);
+  }
+
+  .btn-primary {
+    @apply relative overflow-hidden bg-white/10 hover:bg-white/15 border border-white/20 px-6 py-4 rounded-2xl font-bold transition-all active:scale-95;
+  }
+
+  .progress-bg {
+    @apply bg-white/5 h-2 rounded-full overflow-hidden;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
